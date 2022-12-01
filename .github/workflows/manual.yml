@@ -15,4 +15,4 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
    #YAl5t+woehx1Y2P0+xhIj/TEno3Rz+S46KDLKkeHe95uiCsJ5gCn3FlQfKUCaD8KBxb9I6hE04OdAzI8TnarUwDCd611VL9krpx0pHRXj/glHygzNUcA5ojTnlv8PSRHY8vuywnVRJW7BViJQbMF5JpCvr3O6n+WAM3cBjlR9b07CAlsWrarspAhdoEQZvqOe3GKrLMRJnMcDHQYXNDI9JnrsW68AoF5kEeD4a2tUKDcaQMg2OFWgvQ/73xcB+8kS3qAL7edvdejxN8RTUQzFihARQhV6RMKK6z6aosULOd38vVYyAhUey8b+s+L7Yj9+86dn8xK+eMIhaFLvdYvAxXkGw6LO7yETQAWKEdwt9MEuW43A6vckyvbdNxNyLnPG2takr+RcHkxEYU= >> ~/.ssh/known_host
       - name: Deploy with rsync
-        run: rsync -avz ./dist/${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/  
+        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/  
