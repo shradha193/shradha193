@@ -1,4 +1,4 @@
-name: Deploy on push
+name: Performing push
 on: 
   push:
   workflow_dispatch: 
