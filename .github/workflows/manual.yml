@@ -17,3 +17,6 @@ jobs:
         uses: actions/checkout@v3
       - name: Deploy with rsync
         run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/ 
+      - name: Run build script
+        run: /home/ubuntu/dist/calculator.sh
+        shell: bash
