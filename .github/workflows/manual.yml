@@ -19,3 +19,11 @@ jobs:
         run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/ 
       - name: Execute Build Script
         run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}/ubuntu/dist/calculator.sh
+      - name: Read file contents
+        id: read_file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: "/home/${{ secrets.USERNAME }}/ubuntu/dist/calculator.sh"
+
+      - name: File contents
+        run: echo "${ steps.read_file.outputs.contents }"
