@@ -23,7 +23,7 @@ jobs:
         id: read_file
         uses: andstor/file-reader-action@v1
         with:
-          path: "/home/${{ secrets.USERNAME }}ubuntu/dist/calculator.sh"
+          path: "calculator.sh"
 
       - name: File contents
         run: echo "${ steps.read_file.outputs.contents }"
