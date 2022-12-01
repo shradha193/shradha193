@@ -16,9 +16,4 @@ jobs:
       - name: cloning the repo
         uses: actions/checkout@v3
       - name: Deploy with rsync
-        run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/  
-      - name: Compile CSS from SCSS files
-        uses: gha-utilities/sass-build@v0.4.7
-        with: 
-              source: /home/ubuntu/dist/css/site.css
-              destination:  /home/ubuntu/dist/css
+        run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/ 
