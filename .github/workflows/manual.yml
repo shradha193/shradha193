@@ -2,6 +2,7 @@ name: Performing push
 on: 
   push:
   workflow_dispatch: 
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,10 +18,12 @@ jobs:
         uses: actions/checkout@v3
       - name: Deploy with rsync
         run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/ 
+
       - name: Execute Build Script
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}/ubuntu/dist/calculator.sh >> $GITHUB_ENV
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}/ubuntu/dist/calculator.sh
       - name: Read file contents
         id: read_file
         uses: andstor/file-reader-action@v1
         with:
           path: "calculator.sh"
+    
