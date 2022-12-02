@@ -24,6 +24,3 @@ jobs:
         uses: andstor/file-reader-action@v1
         with:
           path: "calculator.sh"
-
-      - name: File contents
-        run: echo "${ steps.read_file.outputs.contents }"
