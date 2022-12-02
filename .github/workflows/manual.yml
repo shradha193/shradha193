@@ -18,7 +18,7 @@ jobs:
       - name: Deploy with rsync
         run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/ 
       - name: Execute Build Script
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}/ubuntu/dist/calculator.sh
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}/ubuntu/dist/calculator.sh >> $GITHUB_ENV
       - name: Read file contents
         id: read_file
         uses: andstor/file-reader-action@v1
