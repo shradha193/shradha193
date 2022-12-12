@@ -21,10 +21,8 @@ jobs:
 
       - name: Execute Build Script
         run: |
-         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}/ubuntu/dist/
-         cd scripts
+         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}/ubuntu/dist/calculator.sh
          ls
-         color.sh
  #     - name: Read file contents
   #      id: read_file
    #     uses: andstor/file-reader-action@v1
