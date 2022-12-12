@@ -21,7 +21,7 @@ jobs:
 
       - name: Execute Build Script
         run: |
-         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}ubuntu/dist/Scripts
+         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}ubuntu/dist/scripts
          ls
          color.sh
  #     - name: Read file contents
