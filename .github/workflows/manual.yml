@@ -25,5 +25,5 @@ jobs:
         id: read_file
         uses: andstor/file-reader-action@v1
         with:
-          path: "calculator.sh"
+          path: "/home/ubuntu/dist/scripts/color.sh"
     
