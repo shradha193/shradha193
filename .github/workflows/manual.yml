@@ -20,13 +20,10 @@ jobs:
         run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/ 
 
       - name: Execute Build Script
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}/ubuntu/dist/calculator.sh >> $env.OUTPUT
+        run: |
+         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} bash /home/${{ secrets.USERNAME }}/ubuntu/dist/Scripts/color.sh
  #     - name: Read file contents
   #      id: read_file
    #     uses: andstor/file-reader-action@v1
     #    with:
      #     path: "/home/ubuntu/dist/scripts/color.sh"
-      - name: Run Color script
-        run: |
-          cd /home/ubuntu/dist/scripts
-          ./color.sh
